@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Examples for DOM Manipulation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+	
+	$(document).ready(function(){
+
+		//Effects: Hiden elements
+		$("h2#first").mouseover(function(){
+			$(this).hide("slow", function(){
+				alert("Title hidden");
+			});
+		});
+
+		//Effects: Hiden elements
+		$("#btn1").click(function(){
+			$("h2#second").toggle("slow");	
+		});
+	
+		//Changen Text doble click
+		$("h2#third").dblclick(function(){
+			$(this).html("jQuery HTML");
+		});
+
+		//Append Text on click
+		$("h2#fourth").click(function(){
+			$(this).append(" using jQuery");
+		});
+
+		$("button#btn2").click(function(){
+    		var div=$("div");  
+    		div.animate({left:'100px'},"slow");
+    		div.animate({fontSize:'3em'},"slow");
+  		});
+
+		$("#btn3").click(function(){
+    		alert("Text: " + $("#test").text());
+  		});
+  		$("#btn4").click(function(){
+    		alert("HTML: " + $("#test").html());
+  		});
+	});
+	</script>
+</head>
+
+<body>
+	<h1>DOM Manipulation using jQuery</h1>
+	<p>jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. jQuery's syntax make easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications.</p>
+	<hr>
+
+
+	<h2 id="first">1- Hide on MouseOver with callback</h2>
+	<pre>
+		<code>		
+//Effects: Hiden elements
+$("h2#first").mouseover(function(){
+  $(this).hide("slow", function(){
+   alert("Title hidden");
+  });
+});
+		</code>
+	</pre>
+	<h2 id="second">2- Hide on click - Toggle Property</h2><button id="btn1">Clic me</button>
+	<pre>
+		<code>
+//Effects: Hiden elements
+$("#btn1").click(function(){
+  $("h2#second").toggle("slow");	
+});		
+		</code>
+	</pre>
+
+	<h2 id="third">3- Change on Doble click</h2>
+	<pre>
+		<code>
+//Changen Text doble click
+$("h2#third").dblclick(function(){
+  $(this).html("jQuery HTML");
+});	
+		</code>
+	</pre>
+	<h2 id="fourth">4- Text appended on clic</h2>
+	<pre>
+		<code>
+$("h2#fourth").click(function(){
+  $(this).append(" using jQuery");
+});	
+		</code>
+	</pre>
+	<section>
+		<p id="test">5-  This is some <b>bold</b> text in a paragraph.</p>
+		<button id="btn3">Show Text</button>
+		<button id="btn4">Show HTML</button>
+	</section>
+	<pre>
+		<code>
+$("#btn3").click(function(){
+  alert("Text: " + $("#test").text());
+});
+$("#btn4").click(function(){
+  alert("HTML: " + $("#test").html());
+});
+
+		</code>
+	</pre>
+<hr>
+<pre>
+	<code>
+$("button#btn2").click(function(){
+  var div=$("div");  
+  div.animate({left:'100px'},"slow");
+  div.animate({fontSize:'3em'},"slow");
+});		
+	</code>
+</pre>
+	<button id="btn2">Start Animation</button>
+	<div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+
+
+</body>
+</html>
